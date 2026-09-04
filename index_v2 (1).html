@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhya Couture - Luxury Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #d4af37;
+            --accent-color: #f5f5f5;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 48px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* ==================== HEADER & LOGO ==================== */
+        header {
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #c9a027 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== BREADCRUMB & TIMELINE ==================== */
+        .breadcrumb-nav {
+            max-width: 1280px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .breadcrumb-timeline {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .breadcrumb-step {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .breadcrumb-step.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .breadcrumb-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+        }
+
+        .breadcrumb-dot.inactive {
+            background: var(--border-color);
+        }
+
+        .breadcrumb-arrow {
+            color: var(--text-light);
+        }
+
+        .breadcrumb-titles h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .breadcrumb-titles p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero-section {
+            max-width: 1280px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8f4f0 0%, #faf9f8 100%);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        /* ==================== COLLECTION GRID ==================== */
+        .collections-section {
+            max-width: 1280px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-header h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .collection-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .collection-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #f0e6d2 0%, #e8dcc8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: rgba(212, 175, 55, 0.3);
+        }
+
+        .collection-info {
+            padding: var(--spacing-md);
+        }
+
+        .collection-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .collection-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .collection-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* ==================== VALUE PROPOSITIONS ==================== */
+        .value-section {
+            max-width: 1280px;
+            margin: var(--spacing-lg) auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: linear-gradient(135deg, #faf9f8 0%, #f5f5f5 100%);
+            border-radius: 12px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .value-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .value-item p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ==================== CONTACT FORM SECTION ==================== */
+        .contact-section {
+            max-width: 1280px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .contact-content h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .contact-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .contact-benefits {
+            list-style: none;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-benefits li {
+            font-size: 14px;
+            color: var(--text-dark);
+            padding-left: 24px;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+        }
+
+        .contact-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-md);
+        }
+
+        .form-submit:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+
+        /* Hidden iframe for form submission */
+        #submissionFrame {
+            display: none;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: var(--spacing-sm);
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            .breadcrumb-titles h2 {
+                font-size: 24px;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .section-header h3 {
+                font-size: 28px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-md: 16px;
+                --spacing-lg: 24px;
+            }
+
+            header {
+                padding: var(--spacing-md);
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .breadcrumb-titles h2 {
+                font-size: 20px;
+            }
+
+            .contact-form {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-icon">AC</div>
+            <div class="logo-text">
+                <h1>Aadhya Couture</h1>
+                <p>Luxury Fashion House</p>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <ul class="nav-links">
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="header-icons">
+                <button class="icon-btn" title="Search">🔍</button>
+                <button class="icon-btn" title="Wishlist">♡</button>
+                <button class="icon-btn" title="Shopping Bag">🛍</button>
+                <button class="icon-btn" title="Account">👤</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- ==================== BREADCRUMB & TIMELINE ==================== -->
+<section class="breadcrumb-nav">
+    <div class="breadcrumb-timeline">
+        <div class="breadcrumb-step active">
+            <span class="breadcrumb-dot"></span>
+            <span>Get Started</span>
+        </div>
+        <span class="breadcrumb-arrow">→</span>
+        <div class="breadcrumb-step">
+            <span class="breadcrumb-dot inactive"></span>
+            <span>Personal Info</span>
+        </div>
+        <span class="breadcrumb-arrow">→</span>
+        <div class="breadcrumb-step">
+            <span class="breadcrumb-dot inactive"></span>
+            <span>Confirmation</span>
+        </div>
+    </div>
+    <div class="breadcrumb-titles">
+        <h2>Welcome to Aadhya Couture</h2>
+        <p>Discover our exclusive collection and join our community</p>
+    </div>
+</section>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section" id="hero">
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Elevate Your Style</h2>
+            <p>Experience the finest handcrafted garments blending traditional artistry with contemporary elegance. Each piece tells a story of heritage and innovation.</p>
+            <a href="#collections" class="hero-cta">Explore Collections</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FEATURED COLLECTIONS ==================== -->
+<section class="collections-section" id="collections">
+    <div class="section-header">
+        <h3>Featured Collections</h3>
+        <p>Curated selections from our latest seasonal offerings</p>
+    </div>
+    <div class="collection-grid">
+        <div class="collection-card">
+            <div class="collection-image">👗</div>
+            <div class="collection-info">
+                <h4>Eternal Grace</h4>
+                <p>Timeless sarees crafted with premium silk and intricate embroidery</p>
+                <div class="collection-price">From ₹8,999</div>
+            </div>
+        </div>
+        <div class="collection-card">
+            <div class="collection-image">✨</div>
+            <div class="collection-info">
+                <h4>Contemporary Fusion</h4>
+                <p>Modern fusion wear blending traditional motifs with contemporary cuts</p>
+                <div class="collection-price">From ₹6,499</div>
+            </div>
+        </div>
+        <div class="collection-card">
+            <div class="collection-image">💎</div>
+            <div class="collection-info">
+                <h4>Bridal Splendor</h4>
+                <p>Exquisite bridal collection with hand-embellished details</p>
+                <div class="collection-price">From ₹25,000</div>
+            </div>
+        </div>
+        <div class="collection-card">
+            <div class="collection-image">🌸</div>
+            <div class="collection-info">
+                <h4>Garden Dreams</h4>
+                <p>Floral-inspired designs perfect for celebrations and gatherings</p>
+                <div class="collection-price">From ₹4,999</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== VALUE PROPOSITIONS ==================== -->
+<section class="value-section">
+    <div class="values-grid">
+        <div class="value-item">
+            <div class="value-icon">🎨</div>
+            <h4>Artisan Crafted</h4>
+            <p>Each piece handmade by skilled artisans with decades of heritage</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">🌿</div>
+            <h4>Premium Materials</h4>
+            <p>Sourced from the finest suppliers across India and internationally</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">🚚</div>
+            <h4>Free Shipping</h4>
+            <p>Complimentary delivery on orders across India with insured packaging</p>
+        </div>
+        <div class="value-item">
+            <div class="value-icon">💚</div>
+            <h4>Sustainable</h4>
+            <p>Eco-friendly practices and ethical production throughout</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT / INQUIRY FORM ==================== -->
+<section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+        <div class="contact-content">
+            <h3>Get in Touch</h3>
+            <p>Have questions about our collections or need styling advice? We'd love to hear from you. Our team of expert stylists is ready to assist you in finding the perfect piece for your occasion.</p>
+            <ul class="contact-benefits">
+                <li>Personalized styling consultation</li>
+                <li>Custom tailoring services available</li>
+                <li>Expert care and maintenance tips</li>
+                <li>Exclusive early access to new collections</li>
+            </ul>
+        </div>
+
+        <div class="contact-form">
+            <h4>Send Inquiry</h4>
+            <form id="contactForm" method="POST" target="submissionFrame">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your full name" 
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your.email@example.com" 
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="+91 XXXXX XXXXX" 
+                        required
+                    />
+                </div>
+
+                <button type="submit" class="form-submit">Send Inquiry</button>
+
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Hidden iframe for form submission (no page reload) -->
+<iframe id="submissionFrame" name="submissionFrame"></iframe>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Aadhya</h4>
+                <ul>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#craftsmanship">Craftsmanship</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#awards">Awards & Recognition</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#sarees">Sarees</a></li>
+                    <li><a href="#lehengas">Lehengas</a></li>
+                    <li><a href="#fusion">Fusion Wear</a></li>
+                    <li><a href="#bridal">Bridal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#shipping">Shipping & Delivery</a></li>
+                    <li><a href="#returns">Returns & Exchanges</a></li>
+                    <li><a href="#care">Care Instructions</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Aadhya Couture. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT: FORM SUBMISSION ==================== -->
+<script>
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnX9VT1I5_fc34J_2Mul2s_nEsle6wIm-KuIggb1uAzRZEXAuFiQK75iais8kQGEbr/exec';
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submissionFrame = document.getElementById('submissionFrame');
+
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        // Basic validation
+        if (!name || !email || !phone) {
+            showMessage('Please fill in all fields', 'error');
+            return;
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Please enter a valid email address', 'error');
+            return;
+        }
+
+        // Disable submit button
+        const submitBtn = contactForm.querySelector('.form-submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+            // Method 1: Try with Fetch (works when hosted on web server)
+            try {
+                const response = await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('✓ Thank you! Your inquiry has been received. We\'ll contact you shortly.', 'success');
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Inquiry';
+                    return;
+                }
+            } catch (fetchError) {
+                // If fetch fails, fall back to form submission method
+                console.log('Fetch failed, using form submission method...');
+            }
+
+            // Method 2: Use form submission with URL-encoded data (works with file:// protocol)
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                showMessage('✓ Thank you! Your inquiry has been received. We\'ll contact you shortly.', 'success');
+                contactForm.reset();
+            } else {
+                showMessage('Error: ' + (data.message || 'Failed to send inquiry'), 'error');
+            }
+
+        } catch (error) {
+            console.error('Submission error:', error);
+            showMessage('Network error. Please check your connection and try again.', 'error');
+        } finally {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Inquiry';
+        }
+    });
+
+    function showMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = 'form-message ' + type;
+
+        // Auto-hide success message after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                formMessage.className = 'form-message';
+            }, 5000);
+        }
+    }
+</script>
+
+</body>
+</html>
